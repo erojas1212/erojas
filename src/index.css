@@ -60,6 +60,9 @@ body {
     background-color: #383838;
   }
 
+  .spline-container {
+    height: 100vh;
+  }
 
   /************************ About ****************************/
 
@@ -196,6 +199,7 @@ body {
 .contact-div-container {
   background-color: #f4ebe1;
   padding: 10rem;
+  height: 100vh;
 }
 
 .contact-container {

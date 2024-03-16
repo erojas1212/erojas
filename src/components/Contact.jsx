@@ -8,7 +8,14 @@ const Contact = () => {
       <div className="contact-container">
         <h2 className="contact-title">Contact</h2>
 
-        <form className="contact-form">
+        <form
+          className="contact-form"
+          name="contact"
+          method="POST"
+          data-netlify="true"
+          onSubmit="submit"
+        >
+
           <div className="input-container inline">
             <div className="input-container">
               <label htmlFor="name" className="contact-label">
