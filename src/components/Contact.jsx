@@ -17,10 +17,10 @@ const Contact = () => {
           name="contact"
           method="POST"
           data-netlify="true"
-          onSubmit={handleSubmit}
+          onSubmit="submit"
           data-netlify-honeypot="bot-field"
         >
-          <input className="d-none" name="bot-field" />
+          {/* <input className="d-none" name="bot-field" /> */}
           <div className="input-container inline">
             <div className="input-container">
               <label htmlFor="name" className="contact-label">
