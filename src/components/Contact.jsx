@@ -1,11 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import githubIcon from "../Images/github-icon.png";
 import linkedIcon from "../Images/linkedin-icon.png";
 
 const Contact = () => {
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: ""
+  });
 
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Form submission logic using Fetch API
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", ...formData })
+    })
+      .then(() => alert("Success!"))
+      .catch((error) => alert(error));
+  };
+
+  const encode = (data) => {
+    return Object.keys(data)
+      .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
   };
 
   return (
@@ -21,7 +45,9 @@ const Contact = () => {
           onSubmit={handleSubmit}
           data-netlify-honeypot="bot-field"
         >
-        
+          {/* Hidden form name field */}
+          <input type="hidden" name="form-name" value="contact" />
+
           <div className="input-container inline">
             <div className="input-container">
               <label htmlFor="name" className="contact-label">
@@ -33,6 +59,8 @@ const Contact = () => {
                 className="contact-input"
                 name="name"
                 placeholder="name"
+                value={formData.name}
+                onChange={handleChange}
                 required
               />
             </div>
@@ -47,6 +75,8 @@ const Contact = () => {
                 className="contact-input"
                 placeholder="email"
                 name="email"
+                value={formData.email}
+                onChange={handleChange}
                 required
               />
             </div>
@@ -63,6 +93,8 @@ const Contact = () => {
               placeholder="message"
               name="message"
               rows="4"
+              value={formData.message}
+              onChange={handleChange}
               required
             />
           </div>
