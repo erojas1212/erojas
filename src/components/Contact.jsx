@@ -6,19 +6,6 @@ const Contact = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const form = event.target;
-    const formData = new FormData(form);
-
-    fetch("/", {
-      method: "POST",
-      body: formData,
-    })
-      .then(() => {
-        console.log("Form submission successful");
-      })
-      .catch((error) => {
-        console.error("Form submission failed:", error);
-      });
   };
 
   return (
@@ -34,7 +21,7 @@ const Contact = () => {
           onSubmit={handleSubmit}
           data-netlify-honeypot="bot-field"
         >
-          {/* <input className="d-none" name="bot-field" /> */}
+        
           <div className="input-container inline">
             <div className="input-container">
               <label htmlFor="name" className="contact-label">

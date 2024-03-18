@@ -313,6 +313,36 @@ body {
   width: 75px;
 }
 
+/************************************ Resume ***********************/
+
+.resume-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100hv;
+}
+
+.resume-title {
+  margin-top: 3em;
+  font-size: 2em;
+}
+
+.resume-button {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  padding: 10px 20px;
+  background-color: #0077cc;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.resume-button:hover {
+  background-color: #0056b3;
+}
+
 
 @media only screen and (max-width: 768px) {
 

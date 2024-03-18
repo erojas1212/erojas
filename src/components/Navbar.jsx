@@ -21,6 +21,9 @@ const Navbar = () => {
           <li>
             <button onClick={() => handleNavigation("/contact")}>Contact Me</button>
           </li>
+          <li>
+            <button onClick={() => handleNavigation("/resume")}>Resume</button>
+          </li>
         </ul>
       </nav>
     </div>
