@@ -1,14 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import githubIcon from "../Images/github-icon.png";
 import linkedIcon from "../Images/linkedin-icon.png";
 
+
+
 const Contact = () => {
+
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("")
+  const [messsage, setMesssage] = useState("")
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: JSON.stringify({ name, email, messsage })
     })
       .then(() => alert("Success!"))
       .catch(error => alert(error));
@@ -42,6 +50,8 @@ const Contact = () => {
                 name="name"
                 placeholder="name"
                 required
+                value={name}
+                onChange={(value) => setName(value)}
               />
             </div>
 
@@ -56,6 +66,8 @@ const Contact = () => {
                 placeholder="email"
                 name="email"
                 required
+                value={email}
+                onChange={(value) => setEmail(value)}
               />
             </div>
           </div>
@@ -72,6 +84,8 @@ const Contact = () => {
               name="message"
               rows="4"
               required
+              value={messsage}
+              onChange={(value) => setMesssage(value)}
             />
           </div>
 
