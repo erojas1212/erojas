@@ -8,6 +8,54 @@
     <title>Vite + React</title>
   </head>
   <body>
+
+    <form
+          hidden
+          class="contact-form"
+          name="contact"
+          method="POST"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+          netlify
+        >
+
+              <input
+                type="hidden"
+                type="text"
+                id="name"
+                class="contact-input"
+                name="name"
+                placeholder="name"
+                value="contact"
+                required
+              />
+
+              <input
+                type="hidden"
+                type="email"
+                id="email"
+                class="contact-input"
+                placeholder="email"
+                name="email"
+                required
+              />
+
+            <textarea
+              hidden
+              id="message"
+              class="contact-textarea"
+              placeholder="message"
+              name="message"
+              rows="4"
+              required
+              >
+            </textarea>
+
+          <button hidden type="submit" class="contact-button">
+            Submit
+          </button>
+        </form>
+
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
