@@ -51,7 +51,7 @@ const Contact = () => {
                 placeholder="name"
                 required
                 value={name}
-                onChange={(value) => setName(value)}
+                onChange={(event) => setName(event.target.value)}
               />
             </div>
 
@@ -67,7 +67,7 @@ const Contact = () => {
                 name="email"
                 required
                 value={email}
-                onChange={(value) => setEmail(value)}
+                onChange={(event) => setEmail(event.target.value)}
               />
             </div>
           </div>
@@ -85,7 +85,7 @@ const Contact = () => {
               rows="4"
               required
               value={messsage}
-              onChange={(value) => setMesssage(value)}
+              onChange={(event) => setMesssage(event.target.value)}
             />
           </div>
 
