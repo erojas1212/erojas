@@ -6,6 +6,12 @@ const Contact = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    })
+      .then(() => alert("Success!"))
+      .catch(error => alert(error));
   };
 
   return (
