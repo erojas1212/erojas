@@ -15,8 +15,8 @@ const Contact = () => {
 
     fetch("/", {
       method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ name, email, messsage })
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name, email, messsage })
     })
       .then(() => alert("Success!"))
       .catch(error => alert(error));
