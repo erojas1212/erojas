@@ -3,10 +3,10 @@ import githubIcon from "../Images/github-icon.png";
 import linkedIcon from "../Images/linkedin-icon.png";
 
 const Contact = () => {
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
+  const handleSubmit = (event) => {
+    event.preventDefault();
 
-  // };
+  };
 
   return (
     <div className="contact-div-container">
@@ -20,7 +20,9 @@ const Contact = () => {
           data-netlify="true"
           data-netlify-honeypot="bot-field"
           netlify
+          onSubmit={handleSubmit}
         >
+
 
           <div className="input-container inline">
             <div className="input-container">
@@ -33,7 +35,6 @@ const Contact = () => {
                 className="contact-input"
                 name="name"
                 placeholder="name"
-                value="contact"
                 required
               />
             </div>
