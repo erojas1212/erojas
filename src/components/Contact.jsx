@@ -138,8 +138,20 @@ const Contact = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const handleSubmit = async (event) => {
-    event.preventDefault();
-    // Your form submission logic goes here if needed
+          event.preventDefault();
+          try {
+            const response = await fetch("/", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ name, email, messsage })
+            })
+            if(response.ok){
+              alert("Success!")
+            }
+          } catch (error) {
+            // alert(error)
+            console.log(error)
+          }
   };
   return (
     <div className="contact-div-container">
