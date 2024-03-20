@@ -32,8 +32,9 @@ const Contact = () => {
           name="contact"
           method="post"
           data-netlify="true"
+          netlify
           // data-netlify-honeypot="bot-field"
-          // onSubmit={handleSubmit}
+          onSubmit={handleSubmit}
         >
 
 
