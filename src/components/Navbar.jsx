@@ -19,7 +19,7 @@ const Navbar = () => {
             <button onClick={() => handleNavigation("/projects")}>Projects</button>
           </li>
           <li>
-            <button onClick={() => handleNavigation("/contact")}>Contact Me</button>
+            <button onClick={() => handleNavigation("/contact")}>Contact</button>
           </li>
           <li>
             <button onClick={() => handleNavigation("/resume")}>Resume</button>
