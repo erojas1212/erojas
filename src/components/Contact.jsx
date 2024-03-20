@@ -22,7 +22,8 @@ const Contact = () => {
         alert("Success!")
       }
     } catch (error) {
-      alert(error)
+      // alert(error)
+      console.log(error)
     }
 
   };
@@ -35,8 +36,8 @@ const Contact = () => {
         <form
           className="contact-form"
           name="contact"
-          method="post"
-          data-netlify="true"
+          // method="post"
+          // data-netlify="true"
           netlify
           // data-netlify-honeypot="bot-field"
           onSubmit={handleSubmit}
