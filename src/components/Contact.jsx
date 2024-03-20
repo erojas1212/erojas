@@ -143,7 +143,7 @@ const Contact = () => {
             const response = await fetch("/", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({ name, email, messsage })
+              body: JSON.stringify({ name, email, message })
             })
             if(response.ok){
               alert("Success!")
