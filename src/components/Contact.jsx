@@ -10,16 +10,21 @@ const Contact = () => {
   const [email, setEmail] = useState("")
   const [messsage, setMesssage] = useState("")
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async(event) => {
     event.preventDefault();
+    try {
+      const response = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, messsage })
+      })
+      if(response.ok){
+        alert("Success!")
+      }
+    } catch (error) {
+      alert(error)
+    }
 
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name, email, messsage })
-    })
-      .then(() => alert("Success!"))
-      .catch(error => alert(error));
   };
 
   return (
