@@ -4,7 +4,7 @@ import Spline from "@splinetool/react-spline";
 const SplineComponent = () => {
   return (
     <div className="spline-container">
-      <Spline scene="https://prod.spline.design/uH0I0OiNImkASNHq/scene.splinecode" />
+      <Spline scene="https://prod.spline.design/Ma7A0jFIHssBtJIs/scene.splinecode" />
     </div>
   );
 };
